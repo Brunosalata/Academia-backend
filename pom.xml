@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>me.dio.academia</groupId>
-	<artifactId>academia-digital</artifactId>
+	<artifactId>academia-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>academia-digital</name>
+	<name>academia-backend</name>
 	<description>Tutorial API RESTful modelando sistema de academia de ginástica</description>
 	<properties>
 		<java.version>11</java.version>

@@ -7,6 +7,12 @@
 Pré-requistos
 </h2>
 
+- [x] Lógica de programação e POO;
+
+- [x] Conhecimento Avançado(Java, Spring Framework);
+
+- [x] Ferramentas de desenvolvimento (IDE, Spring Framework, Git, GitHub).
+
 - [x] Fundamentos do Spring Boot
 
 - [x] Noções de SQL

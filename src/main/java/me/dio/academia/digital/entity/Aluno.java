@@ -11,16 +11,16 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-@Table(name = "tb_alunos")
+@Data                     // anotação do lombok para acessar os getters e setters
+@NoArgsConstructor        // anotação do lombok - Construtor sem parâmetro
+@AllArgsConstructor       // anotação do lombok - Construtor com todos os parâmetro
+@Entity                   // representa a injeção (cria a tabela no banco de dados) - pede pra toda identidade ter um ID
+@Table(name = "tb_alunos")    // se não tivesse definido o nome como tb_aluno, teria salvo como Aluno
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Aluno {
 
   @Id                   // anotação de chave primária
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)     //Generate.IDENTITY gera automaticamente os Id
   private Long id;
 
   private String nome;
@@ -32,8 +32,8 @@ public class Aluno {
 
   private LocalDate dataDeNascimento;
 
-  @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)    //quando pedir informações de camila, vem tudo, menos as avaliações físicas referente ao aluno
-  @JsonIgnore
-  private List<AvaliacaoFisica> avaliacoes = new ArrayList<>();
+  @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)    //quando pedir informações do aluno, vem tudo, menos as avaliações físicas referente ao aluno
+  @JsonIgnore     //estratégia para ignorar eventuais eventos indesejados do Json
+  private List<AvaliacaoFisica> avaliacoes = new ArrayList<>();     //relação entre tabelas, que demanda chave estrangeira
 
 }

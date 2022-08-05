@@ -25,5 +25,5 @@ public class AlunoController {
         return service.create(form);
     }
 
-    
+
 }
